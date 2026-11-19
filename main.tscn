@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cglqx26felr73"]
+
+[ext_resource type="Script" uid="uid://dehn3ofba5rk7" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=1279603402]
+script = ExtResource("1_ig7tw")
+
+[node name="ProvinceNameLabel" type="Label" parent="." unique_id=29655670]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 28
+text = "Strategy 101"
+
+[node name="DateLabel" type="Label" parent="." unique_id=672373142]
+offset_top = 73.0
+offset_right = 40.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
