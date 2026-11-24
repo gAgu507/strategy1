@@ -1,7 +1,6 @@
 extends Node2D
 
 var state := GameState.new()
-var _selected := ""
 
 @onready var clock: GameClock = $GameClock
 @onready var map: MapView = $MapView
@@ -10,14 +9,11 @@ var _selected := ""
 
 func _ready() -> void:
 	clock.day_passed.connect(state.tick_day)
-	map.province_selected.connect(_on_province_selected)
+	map.province_selected.connect(ui.show_province)
+	map.army_selected.connect(ui.show_army)
+	map.move_requested.connect(state.order_move)
 	map.setup(state)
 	ui.setup(state, clock)
-
-
-func _on_province_selected(id: String) -> void:
-	_selected = id
-	ui.show_province(id)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -31,6 +27,3 @@ func _unhandled_input(event: InputEvent) -> void:
 				clock.set_speed(2)
 			KEY_3:
 				clock.set_speed(3)
-			KEY_C:   # временно, для проверки
-				if _selected != "":
-					state.capture(_selected, state.player)

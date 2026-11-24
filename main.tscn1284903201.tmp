@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cglqx26felr73"]
+
+[ext_resource type="Script" uid="uid://dehn3ofba5rk7" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b64hcuscx6c7p" path="res://game_clock.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://d0r7fm8aoldiv" path="res://map_view.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bf2hs0laujaql" path="res://info_panel.gd" id="3_1bvp3"]
+
+[node name="Main" type="Node2D" unique_id=1279603402]
+script = ExtResource("1_ig7tw")
+
+[node name="MapView" type="Node2D" parent="." unique_id=1050052895]
+position = Vector2(480, 80)
+script = ExtResource("2_h2yge")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1265134089]
+script = ExtResource("3_1bvp3")
+
+[node name="InfoLabel" type="Label" parent="UI" unique_id=29655670]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 188.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 22
+text = "Strategy 101"
+
+[node name="DateLabel" type="Label" parent="UI" unique_id=672373142]
+offset_right = 40.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 20
+
+[node name="GameClock" type="Node" parent="." unique_id=462304303]
+script = ExtResource("2_0xm2m")
